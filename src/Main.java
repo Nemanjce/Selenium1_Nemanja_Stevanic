@@ -1,4 +1,5 @@
 
+import framework.Helper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -33,7 +34,7 @@ public class Main {
         WebElement addCategButton = wait.until(ExpectedConditions.elementToBeClickable(By.className("pull-right")));
         addCategButton.click();
         WebElement enterCateg = wait.until(ExpectedConditions.elementToBeClickable(By.className("form-control")));
-        enterCateg.sendKeys("Categ by Neca");
+        enterCateg.sendKeys(Helper.getRandomText());
         WebElement saveEnteredCat = wait.until(ExpectedConditions.elementToBeClickable(By.id("save-category-button")));
         saveEnteredCat.click();
 
@@ -44,7 +45,7 @@ public class Main {
         WebElement addRegionButton = wait.until(ExpectedConditions.elementToBeClickable(By.className("pull-right")));
         addRegionButton.click();
         WebElement enterNewReg = wait.until(ExpectedConditions.elementToBeClickable(By.className("input-md")));
-        enterNewReg.sendKeys("New Region by Neca");
+        enterNewReg.sendKeys(Helper.getRandomText());
         WebElement saveNewReg = wait.until(ExpectedConditions.elementToBeClickable(By.id("save-region-button")));
         saveNewReg.click();
 
@@ -55,14 +56,13 @@ public class Main {
         WebElement addPortalButton = wait.until(ExpectedConditions.elementToBeClickable(By.className("pull-right")));
         addPortalButton.click();
         WebElement addPortalName = wait.until(ExpectedConditions.elementToBeClickable(By.className("form-control")));
-        addPortalName.sendKeys("Portal by Neca");
+        addPortalName.sendKeys(Helper.getRandomText());
 
         WebElement addPortalUrl = wait.until(ExpectedConditions.elementToBeClickable(By.id("url")));
         addPortalUrl.sendKeys("http://test.rs");
         WebElement saveNewPortal = wait.until(ExpectedConditions.elementToBeClickable(By.id("save-portal-button")));
         saveNewPortal.click();
 
-     
         Thread.sleep(6000, 1500);
         driver.quit();
     }
